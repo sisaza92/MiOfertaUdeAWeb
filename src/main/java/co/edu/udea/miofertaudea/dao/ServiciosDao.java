@@ -5,7 +5,9 @@
  */
 package co.edu.udea.miofertaudea.dao;
 
+import co.edu.udea.miofertaudea.dto.Grupo;
 import co.edu.udea.miofertaudea.dto.Impedimento;
+import co.edu.udea.miofertaudea.dto.MateriaCursada;
 import co.edu.udea.miofertaudea.dto.MateriaOfertada;
 import co.edu.udea.miofertaudea.dto.Programa;
 import co.edu.udea.miofertaudea.dto.Tanda;
@@ -21,8 +23,8 @@ import java.util.List;
  */
 public class ServiciosDao implements ServicesDao {
     // cedulas quemadas para suponer que estan el la base de datos
-    private  long cedulaEstudiante1=101700;
-    private  long cedulaEstudiante2=101701;
+    private  long cedulaEstudiante1 = 101700;
+    private  long cedulaEstudiante2 = 101701;
     
     /**
      * retorna una lista de programas(contiene el ultimo semestre y el estado)
@@ -50,7 +52,7 @@ public class ServiciosDao implements ServicesDao {
     
     /**
      * retorna las materia ofertadas para el estudiante en el semetre
-     * @param idStudent
+     * @param cedulaEstudiante
      * @param programa
      * @param semestre
      * @return 
@@ -77,13 +79,31 @@ public class ServiciosDao implements ServicesDao {
     }
 
     @Override
-    public void obtenerMaterias() {
-        
+    public List<MateriaCursada> obtenerMaterias(long cedulaEstudiante) {
+        // supongamos que el estudiante1 actual mente no esta cursando ninguna materia es nuevo en la U
+        List<MateriaCursada> materiasCursadas = new ArrayList<>();
+        if(cedulaEstudiante == cedulaEstudiante2){
+            materiasCursadas.add(new MateriaCursada());
+            materiasCursadas.add(new MateriaCursada());
+            materiasCursadas.add(new MateriaCursada());
+        }
+        return materiasCursadas;
     }
 
     @Override
-    public void obtenerGrupos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Grupo> obtenerGrupos(String codigoMateria) {
+        List<Grupo> grupos = new ArrayList();
+        // hacer una estructura case of codigoMateria
+        switch(codigoMateria){
+        case "2508107": //LOGICA Y REPRESENTACION I
+                grupos.add(new Grupo("01",30,15,"19-220","wv 12-2","nombreProfesor"));
+                grupos.add(new Grupo("02",30,10,"19-310","mj 12-2","nombreProfesor"));
+        case "2508111"://MATEMATICAS DISCRETAS I
+                grupos.add(new Grupo("01",30,25,"19-220","wv 6-8","sierra"));
+                grupos.add(new Grupo("02",30,25,"19-220","wv 6-8","sierra"));
+        }
+        
+        return grupos;
     }
 
     @Override

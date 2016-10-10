@@ -20,6 +20,17 @@ public class Grupo {
     private String horario;
     private String nombreProfesor;
 
+    public Grupo(String grupo, int cupoMaximo, int cupoDisponible, String aula, String horario, String nombreProfesor) {
+        this.grupo = grupo;
+        this.cupoMaximo = cupoMaximo;
+        this.cupoDisponible = cupoDisponible;
+        this.aula = aula;
+        this.horario = horario;
+        this.nombreProfesor = nombreProfesor;
+    }
+    
+    
+
     public String getGrupo() {
         return grupo;
     }

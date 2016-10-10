@@ -6,8 +6,9 @@
 package co.edu.udea.miofertaudea.service;
 
 /**
- *
- * @author CristianCamilo
+ *contiene la implementacion de los servicios rest
+ * que se van a exponer
+ * @author santiago
  */
 public class ServicesImpl implements Services {
 
