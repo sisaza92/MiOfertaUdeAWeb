@@ -5,25 +5,31 @@
  */
 package co.edu.udea.miofertaudea.dao;
 
+import co.edu.udea.miofertaudea.dto.Tanda;
 import co.edu.udea.miofertaudea.service.*;
 import java.util.List;
 
 /**
- *
- * @author CristianCamilo
+ * 
+ * @author Santiago
  */
 public interface ServicesDao {
     
     /**
      * retorna los programas del usuario y su ultimo semestre, no está creado,
      * deberá retornar la estructura: programa, nombreprograma, estado, semestre
+     * @return 
      */
-    public List obtenerProgramaYUltimoSemestre();
+    public List obtenerProgramaYUltimoSemestre(long cedulaEstudiante);
     
     /**
-     * retorna las materias del estudiante en ese semestre (consultamateriasestudiantemares).
+     * retorna las materias del estudiante en ese semestre (consultamateriasestudiantemares)
+     * @param cedulaEstudiante
+     * @param programa
+     * @param semestre
+     * @return 
      */
-    public void obtenerMateriasEnSemestre(String idStudent, String program, String semester);
+    public List obtenerMateriasEnSemestre(long cedulaEstudiante, String programa, String semestre);
     
     /**
      * retorna las materias que está cursando en el programa/semestre, no está creado,
@@ -40,14 +46,15 @@ public interface ServicesDao {
     /**
      * retorna la tanda en el programa/semestre, no está creado, deberá retornar 
      * la estructura: numerotanda, fecha, hora
+     * 
      */
-    public void obtenerTanda();
+    public Tanda obtenerTanda(long cedulaEstudiante);
     
     /**
      * retorna los impedimientos el programa, no está creado, deberá retornar la 
      * estructura: semestre, impedimiento
      */
-    public void obtenerImpedimentos();
+    public List obtenerImpedimentos(long cedulaEstudiante);
     
     
 }

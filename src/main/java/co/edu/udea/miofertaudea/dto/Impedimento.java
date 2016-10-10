@@ -14,6 +14,13 @@ public class Impedimento {
     private String semestre;
     private String impedimento;
 
+    public Impedimento(String semestre, String impedimento) {
+        this.semestre = semestre;
+        this.impedimento = impedimento;
+    }
+
+    
+    
     public String getSemestre() {
         return semestre;
     }

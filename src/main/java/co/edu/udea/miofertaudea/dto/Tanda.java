@@ -16,6 +16,11 @@ public class Tanda {
     private int nroTanda;
     private Date fecha;
 
+    public Tanda(int nroTanda, Date fecha) {
+        this.nroTanda = nroTanda;
+        this.fecha = fecha;
+    }
+    
     public int getNroTanda() {
         return nroTanda;
     }
