@@ -5,46 +5,54 @@
  */
 package co.edu.udea.miofertaudea.service;
 
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
+import org.jboss.resteasy.annotations.providers.jackson.Formatted;
+
 /**
  *
- * @author CristianCamilo
+ * @author santiago
  */
 public interface Services {
+
+    //que hace cada anotacion?
+    @GET
+    @Path("/obtenerProgramaYUltimoSemestre/{cedulaEstudiante}")
+    @Produces("application/json")
+    @Formatted
+    public Response obtenerProgramaYUltimoSemestre(@PathParam("cedulaEstudiante") long cedulaEstudiante);
     
-    /**
-     * retorna los programas del usuario y su ultimo semestre, no está creado,
-     * deberá retornar la estructura: programa, nombreprograma, estado, semestre
-     */
-    public void obtenerProgramaYUltimoSemestre();
+    @GET
+    @Path("/obtenerProgramaYUltimoSemestre/{cedulaEstudiante}")
+    @Produces("application/json")
+    @Formatted
+    public Response obtenerMateriasEnSemestre(@PathParam("cedulaEstudiante") long cedulaEstudiante);
     
-    /**
-     * retorna las materias del estudiante en ese semestre (consultamateriasestudiantemares).
-     */
-    public void obtenerMateriasEnSemestre(String idStudent, String program, String semester);
+    @GET
+    @Path("/obtenerMaterias/{cedulaEstudiante}")
+    @Produces("application/json")
+    @Formatted
+    public Response obtenerMaterias(@PathParam("cedulaEstudiante") long cedulaEstudiante);
     
-    /**
-     * retorna las materias que está cursando en el programa/semestre, no está creado,
-     * deberá retornar la estructura: codigomateria, nombremateria, creditos, grupo, horario
-     */
-    public void obtenerMaterias();
+    @GET
+    @Path("/obtenerGrupos/{codigoMateria}")
+    @Produces("application/json")
+    @Formatted
+    public Response obtenerGrupos(@PathParam("codigoMateria") String codigoMateria);
     
-    /**
-     * retorna los grupos disponibles de la materia el programa/semestre, no está creado,
-     * deberá retornar la estructura: grupo, cupomaximo, cupodisponible, aula, horario, nombreprofesor
-     */
-    public void obtenerGrupos();
+    @GET
+    @Path("/obtenerGrupos/{codigoMateria}")
+    @Produces("application/json")
+    @Formatted
+    public Response obtenerTanda(@PathParam("cedulaEstudiante") long cedulaEstudiante);
     
-    /**
-     * retorna la tanda en el programa/semestre, no está creado, deberá retornar 
-     * la estructura: numerotanda, fecha, hora
-     */
-    public void obtenerTanda();
-    
-    /**
-     * retorna los impedimientos el programa, no está creado, deberá retornar la 
-     * estructura: semestre, impedimiento
-     */
-    public void obtenerImpedimentos();
-    
+    @GET
+    @Path("/obtenerImpedimentos/{codigoMateria}")
+    @Produces("application/json")
+    @Formatted
+    public Response obtenerImpedimentos(@PathParam("cedulaEstudiante") long cedulaEstudiante);
     
 }

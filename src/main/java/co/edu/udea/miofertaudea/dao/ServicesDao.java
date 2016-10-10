@@ -6,7 +6,6 @@
 package co.edu.udea.miofertaudea.dao;
 
 import co.edu.udea.miofertaudea.dto.Tanda;
-import co.edu.udea.miofertaudea.service.*;
 import java.util.List;
 
 /**
