@@ -7,8 +7,11 @@ package co.edu.udea.miofertaudea.service;
 
 import co.edu.udea.miofertaudea.dao.ServicesDao;
 import co.edu.udea.miofertaudea.dao.ServiciosDao;
+import co.edu.udea.miofertaudea.dto.Grupo;
+import co.edu.udea.miofertaudea.dto.Impedimento;
 import co.edu.udea.miofertaudea.dto.MateriaOfertada;
 import co.edu.udea.miofertaudea.dto.Programa;
+import co.edu.udea.miofertaudea.dto.Tanda;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -61,17 +64,45 @@ public class ServicesImpl implements Services {
 
     @Override
     public Response obtenerGrupos(String codigoMateria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Response respuesta = null;
+        try {
+            List<Grupo> grupos  = serviciosDao.obtenerGrupos(codigoMateria);
+            respuesta = Response.ok(grupos).build();
+            
+        } catch (ExceptionInInitializerError ex) {
+            // que hace
+            Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return respuesta;
+        
     }
 
     @Override
     public Response obtenerTanda(long cedulaEstudiante) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Response respuesta = null;
+        try {
+            Tanda tanda  = serviciosDao.obtenerTanda(cedulaEstudiante);
+            respuesta = Response.ok(tanda).build();
+            
+        } catch (ExceptionInInitializerError ex) {
+            // que hace
+            Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return respuesta;
     }
 
     @Override
     public Response obtenerImpedimentos(long cedulaEstudiante) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Response respuesta = null;
+        try {
+            List<Impedimento> impedimento  = serviciosDao.obtenerImpedimentos(cedulaEstudiante);
+            respuesta = Response.ok(impedimento).build();
+            
+        } catch (ExceptionInInitializerError ex) {
+            // que hace
+            Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return respuesta;
     }
 
 }
