@@ -18,6 +18,7 @@ public interface ServicesDao {
     /**
      * retorna los programas del usuario y su ultimo semestre, no está creado,
      * deberá retornar la estructura: programa, nombreprograma, estado, semestre
+     * @param cedulaEstudiante
      * @return 
      */
     public List obtenerProgramaYUltimoSemestre(long cedulaEstudiante);

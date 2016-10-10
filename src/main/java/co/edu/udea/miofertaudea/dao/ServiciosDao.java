@@ -10,7 +10,6 @@ import co.edu.udea.miofertaudea.dto.MateriaOfertada;
 import co.edu.udea.miofertaudea.dto.Programa;
 import co.edu.udea.miofertaudea.dto.Tanda;
 import java.time.Instant;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -58,17 +57,28 @@ public class ServiciosDao implements ServicesDao {
      */
     
     @Override
-    public List<MateriaOfertada> obtenerMateriasEnSemestre(long idStudent, String programa, String semestre) {
+    public List<MateriaOfertada> obtenerMateriasEnSemestre(long cedulaEstudiante, String programa, String semestre) {
        //supongamos que esta es la que retorna la oferta por que la otra retorna es lo que esta cursando
         List<MateriaOfertada> materiasOfertadas = new ArrayList();
-        materiasOfertadas.add(new MateriaOfertada());
         
+        if (cedulaEstudiante == cedulaEstudiante1) {
+            materiasOfertadas.add(new MateriaOfertada("2508107","LOGICA Y REPRESENTACION I", 4));
+            materiasOfertadas.add(new MateriaOfertada("2508111","MATEMATICAS DISCRETAS I", 4));
+            materiasOfertadas.add(new MateriaOfertada("2539100","LECTOESCRITURA", 4));
+        }else{
+            if (cedulaEstudiante == cedulaEstudiante2) {
+                materiasOfertadas.add(new MateriaOfertada("2536200","FISICA MECANICA", 4));
+                materiasOfertadas.add(new MateriaOfertada("2539100","LECTOESCRITURA", 4));
+                materiasOfertadas.add(new MateriaOfertada("2517350","FORMAC CIUDADANA Y CONST.", 0));
+            }
+            // no existe esa cedula en la base de datos
+        }
         return materiasOfertadas;
     }
 
     @Override
     public void obtenerMaterias() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
