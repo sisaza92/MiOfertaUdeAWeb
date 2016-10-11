@@ -42,7 +42,7 @@ public class ServletServiceRest extends Application{
     }
     
     /**
-     * Retorna el conjunto de instancias Activas de la clase CancionServiceImpl
+     * Retorna el conjunto de instancias Activas de la clase ServiceImpl
      * @return 
      */
     @Override
