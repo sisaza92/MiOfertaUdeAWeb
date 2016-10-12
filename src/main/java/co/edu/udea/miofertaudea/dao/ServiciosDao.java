@@ -23,8 +23,10 @@ import java.util.List;
  */
 public class ServiciosDao implements ServicesDao {
     // cedulas quemadas para suponer que estan el la base de datos
-    private  long cedulaEstudiante1 = 101700;
-    private  long cedulaEstudiante2 = 101701;
+    private  String cedulaEstudiante1 = "101700";
+    private  String cedulaEstudiante2 = "101701";
+    
+    //Ojo validar los datos que ingresan 
     
     /**
      * retorna una lista de programas(contiene el ultimo semestre y el estado)
@@ -34,14 +36,14 @@ public class ServiciosDao implements ServicesDao {
      */
     
     @Override
-    public List<Programa> obtenerProgramaYUltimoSemestre(long cedulaEstudiante) {
+    public List<Programa> obtenerProgramaYUltimoSemestre(String cedulaEstudiante) {
         
         List<Programa> programas = new ArrayList();
-        if (cedulaEstudiante == cedulaEstudiante1) {
+        if (cedulaEstudiante.equals(cedulaEstudiante1)) {
             programas.add(new Programa(504, "Ingeniería de Sistemas", "Activo", "2016-1"));
             programas.add(new Programa(104, "Administración de Empresas", "Cancelado", "2016-1"));
         }else{
-            if (cedulaEstudiante == cedulaEstudiante2) {
+            if (cedulaEstudiante.equals(cedulaEstudiante1)) {
                 programas.add(new Programa(533, "Ingeniería civil", "Activo", "2016-1"));
             }
             // no existe esa cedula en la base de datos
@@ -59,16 +61,16 @@ public class ServiciosDao implements ServicesDao {
      */
     
     @Override
-    public List<MateriaOfertada> obtenerMateriasEnSemestre(long cedulaEstudiante, String programa, String semestre) {
+    public List<MateriaOfertada> obtenerMateriasOfertadas(String cedulaEstudiante, String programa, String semestre) {
        //supongamos que esta es la que retorna la oferta por que la otra retorna es lo que esta cursando
-        List<MateriaOfertada> materiasOfertadas = new ArrayList();
+       List<MateriaOfertada> materiasOfertadas = new ArrayList();
         
-        if (cedulaEstudiante == cedulaEstudiante1) {
+        if (cedulaEstudiante.equals(cedulaEstudiante1)) {
             materiasOfertadas.add(new MateriaOfertada("2508107","LOGICA Y REPRESENTACION I", 4));
             materiasOfertadas.add(new MateriaOfertada("2508111","MATEMATICAS DISCRETAS I", 4));
             materiasOfertadas.add(new MateriaOfertada("2539100","LECTOESCRITURA", 4));
         }else{
-            if (cedulaEstudiante == cedulaEstudiante2) {
+            if (cedulaEstudiante.equals(cedulaEstudiante2)) {
                 materiasOfertadas.add(new MateriaOfertada("2536200","FISICA MECANICA", 4));
                 materiasOfertadas.add(new MateriaOfertada("2539100","LECTOESCRITURA", 4));
                 materiasOfertadas.add(new MateriaOfertada("2517350","FORMAC CIUDADANA Y CONST.", 0));
@@ -79,10 +81,10 @@ public class ServiciosDao implements ServicesDao {
     }
 
     @Override
-    public List<MateriaCursada> obtenerMaterias(long cedulaEstudiante) {
+    public List<MateriaCursada> obtenerMaterias(String cedulaEstudiante) {
         // supongamos que el estudiante1 actual mente no esta cursando ninguna materia es nuevo en la U
         List<MateriaCursada> materiasCursadas = new ArrayList<>();
-        if(cedulaEstudiante == cedulaEstudiante2){
+        if(cedulaEstudiante.equals(cedulaEstudiante2)){
             materiasCursadas.add(new MateriaCursada());
             materiasCursadas.add(new MateriaCursada());
             materiasCursadas.add(new MateriaCursada());
@@ -92,6 +94,7 @@ public class ServiciosDao implements ServicesDao {
 
     @Override
     public List<Grupo> obtenerGrupos(String codigoMateria) {
+        
         List<Grupo> grupos = new ArrayList();
         // hacer una estructura case of codigoMateria
         switch(codigoMateria){
@@ -107,12 +110,12 @@ public class ServiciosDao implements ServicesDao {
     }
 
     @Override
-    public Tanda obtenerTanda(long cedulaEstudiante) {
+    public Tanda obtenerTanda(String cedulaEstudiante) {
         Tanda tanda = null;
-        if (cedulaEstudiante == cedulaEstudiante1) {
+        if (cedulaEstudiante.equals(cedulaEstudiante1)) {
             tanda=new Tanda(15,Date.from(Instant.now()));
         }else{
-            if (cedulaEstudiante == cedulaEstudiante2) {
+            if (cedulaEstudiante.equals(cedulaEstudiante2)) {
                 tanda=new Tanda(22,Date.from(Instant.now()));
             }
             // no existe esa cedula en la base de datos
@@ -121,15 +124,12 @@ public class ServiciosDao implements ServicesDao {
     }
 
     @Override
-    public List<Impedimento> obtenerImpedimentos(long cedulaEstudiante) {
+    public List<Impedimento> obtenerImpedimentos(String cedulaEstudiante) {
         List<Impedimento> impedimentos = new ArrayList();
-        if (cedulaEstudiante == cedulaEstudiante1) {
+        if (cedulaEstudiante.equals(cedulaEstudiante1)) {
             impedimentos.add(new Impedimento("2016-1","No pago de matricula"));
             impedimentos.add(new Impedimento("2016-1","No ha devuelto libro"));
         }
         return impedimentos;
     }
-    
-    
-    
 }

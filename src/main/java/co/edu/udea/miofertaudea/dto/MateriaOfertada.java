@@ -14,8 +14,8 @@ public class MateriaOfertada {
     private String codigoMateria;
     private String nombreMateria;
     private int creditos;
-    //private String grupo;  // en la pantalla 2 no sale nada de esta informacion
-    //private String horario; // El horario deberia estár aqui? solo deberia pertenecer a grupo.
+    private String grupo;  // en la pantalla 2 no sale nada de esta informacion
+    private String horario; // El horario deberia estár aqui? solo deberia pertenecer a grupo.
 
     public MateriaOfertada(String codigomateria, String nombreMateria, int creditos) {
         this.codigoMateria = codigomateria;  
@@ -49,20 +49,20 @@ public class MateriaOfertada {
         this.creditos = creditos;
     }
 
-//    public String getGrupo() {
-//        return grupo;
-//    }
-//
-//    public void setGrupo(String grupo) {
-//        this.grupo = grupo;
-//    }
-//
-//    public String getHorario() {
-//        return horario;
-//    }
-//
-//    public void setHorario(String horario) {
-//        this.horario = horario;
-//    }
+    public String getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
     
 }

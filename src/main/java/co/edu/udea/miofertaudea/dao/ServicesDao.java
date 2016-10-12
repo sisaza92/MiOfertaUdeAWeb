@@ -20,22 +20,23 @@ public interface ServicesDao {
      * @param cedulaEstudiante
      * @return 
      */
-    public List obtenerProgramaYUltimoSemestre(long cedulaEstudiante);
+    public List obtenerProgramaYUltimoSemestre(String cedulaEstudiante);
+    
     
     /**
-     * retorna las materias del estudiante en ese semestre (consultamateriasestudiantemares)
+     * retorna la lista de materias ofertadas al estudiante
      * @param cedulaEstudiante
      * @param programa
      * @param semestre
      * @return 
      */
-    public List obtenerMateriasEnSemestre(long cedulaEstudiante, String programa, String semestre);
+    public List obtenerMateriasOfertadas(String cedulaEstudiante, String programa, String semestre);
     
     /**
      * retorna las materias que está cursando en el programa/semestre, no está creado,
      * deberá retornar la estructura: codigomateria, nombremateria, creditos, grupo, horario
      */
-    public List obtenerMaterias(long cedulaEstudiante);
+    public List obtenerMaterias(String cedulaEstudiante);
     
     /**
      * retorna los grupos disponibles de la materia el programa/semestre, no está creado,
@@ -48,13 +49,15 @@ public interface ServicesDao {
      * la estructura: numerotanda, fecha, hora
      * 
      */
-    public Tanda obtenerTanda(long cedulaEstudiante);
+    public Tanda obtenerTanda(String cedulaEstudiante);
     
     /**
      * retorna los impedimientos el programa, no está creado, deberá retornar la 
      * estructura: semestre, impedimiento
+     * @param cedulaEstudiante
+     * @return 
      */
-    public List obtenerImpedimentos(long cedulaEstudiante);
+    public List obtenerImpedimentos(String cedulaEstudiante);
     
     
 }

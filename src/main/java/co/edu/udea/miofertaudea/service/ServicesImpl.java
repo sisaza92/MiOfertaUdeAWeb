@@ -29,7 +29,7 @@ public class ServicesImpl implements Services {
     private final ServicesDao serviciosDao = new  ServiciosDao();
 
     @Override
-    public Response obtenerProgramaYUltimoSemestre(long cedulaEstudiante) {
+    public Response obtenerProgramaYUltimoSemestre(String cedulaEstudiante) {
         Response respuesta = null;
         try {
             List<Programa> programas  = serviciosDao.obtenerProgramaYUltimoSemestre(cedulaEstudiante);
@@ -43,10 +43,10 @@ public class ServicesImpl implements Services {
     }
 
     @Override
-    public Response obtenerMateriasEnSemestre(long cedulaEstudiante) {
+    public Response obtenerMateriasOfertadas(String cedulaEstudiante) {
         Response respuesta = null;
         try {
-            List<MateriaOfertada> oferta  = serviciosDao.obtenerMateriasEnSemestre(cedulaEstudiante,"","");
+            List<MateriaOfertada> oferta  = serviciosDao.obtenerMateriasOfertadas(cedulaEstudiante,"","");
             respuesta = Response.ok(oferta).build();
             
         } catch (ExceptionInInitializerError ex) {
@@ -58,7 +58,7 @@ public class ServicesImpl implements Services {
     }
 
     @Override
-    public Response obtenerMaterias(long cedulaEstudiante) {
+    public Response obtenerMaterias(String cedulaEstudiante) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -78,7 +78,7 @@ public class ServicesImpl implements Services {
     }
 
     @Override
-    public Response obtenerTanda(long cedulaEstudiante) {
+    public Response obtenerTanda(String cedulaEstudiante) {
         Response respuesta = null;
         try {
             Tanda tanda  = serviciosDao.obtenerTanda(cedulaEstudiante);
@@ -92,7 +92,7 @@ public class ServicesImpl implements Services {
     }
 
     @Override
-    public Response obtenerImpedimentos(long cedulaEstudiante) {
+    public Response obtenerImpedimentos(String cedulaEstudiante) {
         Response respuesta = null;
         try {
             List<Impedimento> impedimento  = serviciosDao.obtenerImpedimentos(cedulaEstudiante);

@@ -23,19 +23,19 @@ public interface Services {
     @Path("/obtenerProgramaYUltimoSemestre/{cedulaEstudiante}")
     @Produces("application/json")
     @Formatted
-    public Response obtenerProgramaYUltimoSemestre(@PathParam("cedulaEstudiante") long cedulaEstudiante);
+    public Response obtenerProgramaYUltimoSemestre(@PathParam("cedulaEstudiante") String cedulaEstudiante);
     
     @GET
-    @Path("/obtenerMateriasEnSemestre/{cedulaEstudiante}")
+    @Path("/obtenerMateriasOfertadas/{cedulaEstudiante}")
     @Produces("application/json")
     @Formatted
-    public Response obtenerMateriasEnSemestre(@PathParam("cedulaEstudiante") long cedulaEstudiante);
+    public Response obtenerMateriasOfertadas(@PathParam("cedulaEstudiante") String cedulaEstudiante);
     
     @GET
     @Path("/obtenerMaterias/{cedulaEstudiante}")
     @Produces("application/json")
     @Formatted
-    public Response obtenerMaterias(@PathParam("cedulaEstudiante") long cedulaEstudiante);
+    public Response obtenerMaterias(@PathParam("cedulaEstudiante") String cedulaEstudiante);
     
     @GET
     @Path("/obtenerGrupos/{codigoMateria}")
@@ -47,12 +47,12 @@ public interface Services {
     @Path("/obtenerTanda/{cedulaEstudiante}")
     @Produces("application/json")
     @Formatted
-    public Response obtenerTanda(@PathParam("cedulaEstudiante") long cedulaEstudiante);
+    public Response obtenerTanda(@PathParam("cedulaEstudiante") String cedulaEstudiante);
     
     @GET
     @Path("/obtenerImpedimentos/{cedulaEstudiante}")
     @Produces("application/json")
     @Formatted
-    public Response obtenerImpedimentos(@PathParam("cedulaEstudiante") long cedulaEstudiante);
+    public Response obtenerImpedimentos(@PathParam("cedulaEstudiante") String cedulaEstudiante);
     
 }
