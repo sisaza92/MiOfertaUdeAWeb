@@ -89,25 +89,27 @@ public class ServiciosDao implements ServicesDao {
         case "2508107": //LOGICA Y REPRESENTACION I
                 grupos.add(new Grupo("01",30,15,"19-220","wv 12-2","juan"));
                 grupos.add(new Grupo("02",30,10,"19-310","mj 12-2","maria"));
+                break;
             
         case "2508111"://MATEMATICAS DISCRETAS I
                 grupos.add(new Grupo("01",30,25,"19-220","wv 6-8","sierra"));
                 grupos.add(new Grupo("02",30,25,"19-220","wv 6-8","sierra"));
-            
+                break;
         case "2539100"://LECTOESCRITURA
                 grupos.add(new Grupo("01",30,30,"19-220","wv 10-12","pepe"));
                 grupos.add(new Grupo("02",30,30,"19-222","mj 8-10","yeye"));
                 grupos.add(new Grupo("02",30,30,"19-305","mj 8-10","isaza"));
-            
+                break;
         case "2536200"://FISICA MECANICA
                 grupos.add(new Grupo("01",30,20,"19-207","mj 10-12","arenas bernardo"));
                 grupos.add(new Grupo("02",30,15,"19-310","mw 8-10","sarazola"));
                 grupos.add(new Grupo("02",30,10,"19-220","mj 2-4","edwar"));
-            
+                break;
         case "2517350"://FORMAC CIUDADANA Y CONST.
                 grupos.add(new Grupo("01",30,20,"virtual","m 2-4","mariana"));
                 grupos.add(new Grupo("02",30,15,"virtual","l 8-10","angelica"));
                 grupos.add(new Grupo("02",30,10,"virtual","w 10-12","pedro"));
+                break;
         }
         
         return grupos;
