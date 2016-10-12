@@ -35,12 +35,16 @@ public interface ServicesDao {
     /**
      * retorna las materias que está cursando en el programa/semestre, no está creado,
      * deberá retornar la estructura: codigomateria, nombremateria, creditos, grupo, horario
+     * @param cedulaEstudiante
+     * @return 
      */
     public List obtenerMaterias(String cedulaEstudiante);
     
     /**
      * retorna los grupos disponibles de la materia el programa/semestre, no está creado,
      * deberá retornar la estructura: grupo, cupomaximo, cupodisponible, aula, horario, nombreprofesor
+     * @param codigoMateria
+     * @return 
      */
     public List obtenerGrupos(String codigoMateria);
     
@@ -48,6 +52,8 @@ public interface ServicesDao {
      * retorna la tanda en el programa/semestre, no está creado, deberá retornar 
      * la estructura: numerotanda, fecha, hora
      * 
+     * @param cedulaEstudiante
+     * @return 
      */
     public Tanda obtenerTanda(String cedulaEstudiante);
     

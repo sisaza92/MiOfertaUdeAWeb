@@ -28,13 +28,7 @@ public class ServiciosDao implements ServicesDao {
     
     //Ojo validar los datos que ingresan 
     
-    /**
-     * retorna una lista de programas(contiene el ultimo semestre y el estado)
-     * se tendran quemadas solo dos cedulas 101700 y 101701
-     * @param cedulaEstudiante
-     * @return 
-     */
-    
+   
     @Override
     public List<Programa> obtenerProgramaYUltimoSemestre(String cedulaEstudiante) {
         
@@ -52,13 +46,7 @@ public class ServiciosDao implements ServicesDao {
         return programas;
     }
     
-    /**
-     * retorna las materia ofertadas para el estudiante en el semetre
-     * @param cedulaEstudiante
-     * @param programa
-     * @param semestre
-     * @return 
-     */
+    
     
     @Override
     public List<MateriaOfertada> obtenerMateriasOfertadas(String cedulaEstudiante, String programa, String semestre) {
@@ -99,11 +87,27 @@ public class ServiciosDao implements ServicesDao {
         // hacer una estructura case of codigoMateria
         switch(codigoMateria){
         case "2508107": //LOGICA Y REPRESENTACION I
-                grupos.add(new Grupo("01",30,15,"19-220","wv 12-2","nombreProfesor"));
-                grupos.add(new Grupo("02",30,10,"19-310","mj 12-2","nombreProfesor"));
+                grupos.add(new Grupo("01",30,15,"19-220","wv 12-2","juan"));
+                grupos.add(new Grupo("02",30,10,"19-310","mj 12-2","maria"));
+            
         case "2508111"://MATEMATICAS DISCRETAS I
                 grupos.add(new Grupo("01",30,25,"19-220","wv 6-8","sierra"));
                 grupos.add(new Grupo("02",30,25,"19-220","wv 6-8","sierra"));
+            
+        case "2539100"://LECTOESCRITURA
+                grupos.add(new Grupo("01",30,30,"19-220","wv 10-12","pepe"));
+                grupos.add(new Grupo("02",30,30,"19-222","mj 8-10","yeye"));
+                grupos.add(new Grupo("02",30,30,"19-305","mj 8-10","isaza"));
+            
+        case "2536200"://FISICA MECANICA
+                grupos.add(new Grupo("01",30,20,"19-207","mj 10-12","arenas bernardo"));
+                grupos.add(new Grupo("02",30,15,"19-310","mw 8-10","sarazola"));
+                grupos.add(new Grupo("02",30,10,"19-220","mj 2-4","edwar"));
+            
+        case "2517350"://FORMAC CIUDADANA Y CONST.
+                grupos.add(new Grupo("01",30,20,"virtual","m 2-4","mariana"));
+                grupos.add(new Grupo("02",30,15,"virtual","l 8-10","angelica"));
+                grupos.add(new Grupo("02",30,10,"virtual","w 10-12","pedro"));
         }
         
         return grupos;
