@@ -7,7 +7,6 @@ package co.edu.udea.miofertaudea.dao;
 
 import co.edu.udea.miofertaudea.dto.Grupo;
 import co.edu.udea.miofertaudea.dto.Impedimento;
-import co.edu.udea.miofertaudea.dto.MateriaCursada;
 import co.edu.udea.miofertaudea.dto.MateriaOfertada;
 import co.edu.udea.miofertaudea.dto.Programa;
 import co.edu.udea.miofertaudea.dto.Tanda;
@@ -66,18 +65,6 @@ public class ServiciosDao implements ServicesDao {
             // no existe esa cedula en la base de datos
         }
         return materiasOfertadas;
-    }
-
-    @Override
-    public List<MateriaCursada> obtenerMaterias(String cedulaEstudiante) {
-        // supongamos que el estudiante1 actual mente no esta cursando ninguna materia es nuevo en la U
-        List<MateriaCursada> materiasCursadas = new ArrayList<>();
-        if(cedulaEstudiante.equals(cedulaEstudiante2)){
-            materiasCursadas.add(new MateriaCursada());
-            materiasCursadas.add(new MateriaCursada());
-            materiasCursadas.add(new MateriaCursada());
-        }
-        return materiasCursadas;
     }
 
     @Override

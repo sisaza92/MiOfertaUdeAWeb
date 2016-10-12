@@ -58,11 +58,6 @@ public class ServicesImpl implements Services {
     }
 
     @Override
-    public Response obtenerMaterias(String cedulaEstudiante) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public Response obtenerGrupos(String codigoMateria) {
         Response respuesta = null;
         try {
