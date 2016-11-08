@@ -36,7 +36,7 @@ public class ServiciosDao implements ServicesDao {
             programas.add(new Programa(504, "Ingeniería de Sistemas", "Activo", "2016-1"));
             programas.add(new Programa(104, "Administración de Empresas", "Cancelado", "2016-1"));
         }else{
-            if (cedulaEstudiante.equals(cedulaEstudiante1)) {
+            if (cedulaEstudiante.equals(cedulaEstudiante2)) {
                 programas.add(new Programa(533, "Ingeniería civil", "Activo", "2016-1"));
             }
             // no existe esa cedula en la base de datos
