@@ -48,16 +48,16 @@ public class ServiciosDao implements ServicesDao {
     
     
     @Override
-    public List<MateriaOfertada> obtenerMateriasOfertadas(String cedulaEstudiante, String programa, String semestre) {
+    public List<MateriaOfertada> obtenerMateriasOfertadas(String cedulaEstudiante, String idPrograma, String semestre) {
        //supongamos que esta es la que retorna la oferta por que la otra retorna es lo que esta cursando
        List<MateriaOfertada> materiasOfertadas = new ArrayList();
         
-        if (cedulaEstudiante.equals(cedulaEstudiante1)) {
+        if (cedulaEstudiante.equals(cedulaEstudiante1) && idPrograma.equals("504")) {
             materiasOfertadas.add(new MateriaOfertada("2508107","LOGICA Y REPRESENTACION I", 4));
             materiasOfertadas.add(new MateriaOfertada("2508111","MATEMATICAS DISCRETAS I", 4));
             materiasOfertadas.add(new MateriaOfertada("2539100","LECTOESCRITURA", 4));
         }else{
-            if (cedulaEstudiante.equals(cedulaEstudiante2)) {
+            if (cedulaEstudiante.equals(cedulaEstudiante2) && idPrograma.equals("533")) {
                 materiasOfertadas.add(new MateriaOfertada("2536200","FISICA MECANICA", 4));
                 materiasOfertadas.add(new MateriaOfertada("2539100","LECTOESCRITURA", 4));
                 materiasOfertadas.add(new MateriaOfertada("2517350","FORMAC CIUDADANA Y CONST.", 0));

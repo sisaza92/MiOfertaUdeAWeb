@@ -21,15 +21,18 @@ public interface Services {
     //que hace cada anotacion?
     @GET
     @Path("/obtenerProgramaYUltimoSemestre/{cedulaEstudiante}")
+    
     @Produces("application/json")
     @Formatted
     public Response obtenerProgramaYUltimoSemestre(@PathParam("cedulaEstudiante") String cedulaEstudiante);
     
     @GET
-    @Path("/obtenerMateriasOfertadas/{cedulaEstudiante}")
+    // cedula estudiante y codigo del programa
+    @Path("/obtenerMateriasOfertadas/{cedulaEstudiante}/{idPrograma}")
     @Produces("application/json")
     @Formatted
-    public Response obtenerMateriasOfertadas(@PathParam("cedulaEstudiante") String cedulaEstudiante);
+    public Response obtenerMateriasOfertadas(@PathParam("cedulaEstudiante") String cedulaEstudiante,
+            @PathParam("idPrograma") String idPrograma);
     
     @GET
     @Path("/obtenerGrupos/{codigoMateria}")

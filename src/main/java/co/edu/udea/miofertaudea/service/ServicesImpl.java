@@ -43,10 +43,10 @@ public class ServicesImpl implements Services {
     }
 
     @Override
-    public Response obtenerMateriasOfertadas(String cedulaEstudiante) {
+    public Response obtenerMateriasOfertadas(String cedulaEstudiante, String idPrograma) {
         Response respuesta = null;
         try {
-            List<MateriaOfertada> oferta  = serviciosDao.obtenerMateriasOfertadas(cedulaEstudiante,"","");
+            List<MateriaOfertada> oferta  = serviciosDao.obtenerMateriasOfertadas(cedulaEstudiante,idPrograma,"");
             respuesta = Response.ok(oferta).build();
             
         } catch (ExceptionInInitializerError ex) {
