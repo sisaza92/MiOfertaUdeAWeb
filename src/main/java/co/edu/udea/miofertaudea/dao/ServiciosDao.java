@@ -5,6 +5,7 @@
  */
 package co.edu.udea.miofertaudea.dao;
 
+import co.edu.udea.miofertaudea.dto.Estudiante;
 import co.edu.udea.miofertaudea.dto.Grupo;
 import co.edu.udea.miofertaudea.dto.Impedimento;
 import co.edu.udea.miofertaudea.dto.MateriaOfertada;
@@ -76,6 +77,8 @@ public class ServiciosDao implements ServicesDao {
         case "2508107": //LOGICA Y REPRESENTACION I
                 grupos.add(new Grupo("01",30,15,"19-220","wv 12-2","juan"));
                 grupos.add(new Grupo("02",30,10,"19-310","mj 12-2","maria"));
+                grupos.add(new Grupo("03",30,20,"21-310","ls 12-2","pedro"));
+                
                 break;
             
         case "2508111"://MATEMATICAS DISCRETAS I
@@ -124,5 +127,23 @@ public class ServiciosDao implements ServicesDao {
             impedimentos.add(new Impedimento("2016-1","No ha devuelto libro"));
         }
         return impedimentos;
+    }
+
+    @Override
+    public Estudiante obternerEstudiante(String cedulaEstudiante) {
+        Estudiante estudiante = null;
+        
+        if (cedulaEstudiante.equals(cedulaEstudiante1)) {
+            estudiante = new Estudiante(cedulaEstudiante, "Santiago", "Ramirez", "", "");
+        }else{
+            if (cedulaEstudiante.equals(cedulaEstudiante2)) {
+                estudiante = new Estudiante(cedulaEstudiante, "Cristian", "Isaza", "", "");
+            }
+            // no existe esa cedula en la base de datos
+        }
+
+        
+        
+        return estudiante;
     }
 }

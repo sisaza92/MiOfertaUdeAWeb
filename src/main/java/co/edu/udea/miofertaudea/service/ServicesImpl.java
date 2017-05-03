@@ -7,6 +7,7 @@ package co.edu.udea.miofertaudea.service;
 
 import co.edu.udea.miofertaudea.dao.ServicesDao;
 import co.edu.udea.miofertaudea.dao.ServiciosDao;
+import co.edu.udea.miofertaudea.dto.Estudiante;
 import co.edu.udea.miofertaudea.dto.Grupo;
 import co.edu.udea.miofertaudea.dto.Impedimento;
 import co.edu.udea.miofertaudea.dto.MateriaOfertada;
@@ -92,6 +93,20 @@ public class ServicesImpl implements Services {
         try {
             List<Impedimento> impedimento  = serviciosDao.obtenerImpedimentos(cedulaEstudiante);
             respuesta = Response.ok(impedimento).build();
+            
+        } catch (ExceptionInInitializerError ex) {
+            // que hace
+            Logger.getLogger(ServicesImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return respuesta;
+    }
+
+    @Override
+    public Response obtenerInfoEstudiante(String cedulaEstudiante) {
+        Response respuesta = null;
+        try {
+            Estudiante estudiante = serviciosDao.obternerEstudiante(cedulaEstudiante);
+            respuesta = Response.ok(estudiante).build();
             
         } catch (ExceptionInInitializerError ex) {
             // que hace

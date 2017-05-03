@@ -5,6 +5,7 @@
  */
 package co.edu.udea.miofertaudea.dao;
 
+import co.edu.udea.miofertaudea.dto.Estudiante;
 import co.edu.udea.miofertaudea.dto.Tanda;
 import java.util.List;
 
@@ -56,6 +57,13 @@ public interface ServicesDao {
      * @return 
      */
     public List obtenerImpedimentos(String cedulaEstudiante);
+    
+    /**
+     * retorna un estudian dada su cedula
+     * @param cedulaEstudiante
+     * @return 
+     */
+    public Estudiante obternerEstudiante(String cedulaEstudiante ); 
     
     
 }

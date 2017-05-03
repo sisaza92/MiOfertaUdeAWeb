@@ -46,10 +46,18 @@ public interface Services {
     @Formatted
     public Response obtenerTanda(@PathParam("cedulaEstudiante") String cedulaEstudiante);
     
+    
+    
     @GET
     @Path("/obtenerImpedimentos/{cedulaEstudiante}")
     @Produces("application/json")
     @Formatted
     public Response obtenerImpedimentos(@PathParam("cedulaEstudiante") String cedulaEstudiante);
+    
+    @GET
+    @Path("/obtenerInfoEstudiante/{cedulaEstudiante}")
+    @Produces("application/json")
+    @Formatted
+    public Response obtenerInfoEstudiante(@PathParam("cedulaEstudiante") String cedulaEstudiante);
     
 }
